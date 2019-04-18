@@ -1,5 +1,5 @@
 # AI-Projects
-This repository includes all of the programs I have written for my Artificial Intelligence class (using Python). Below are descriptions of some of
+This repository includes all of the programs I have written for my Artificial Intelligence class (using Python). Below are descriptions of some of the most notable projects.
 
 ## 15-Puzzle Slider Game Solver
 This program utilizes the A* search algorithm and a Manhattan distance heuristic in order to evaluate board states during the searching process. Importantly, the Manhattan distance heuristic is both an admissible (distances are always underestimates of the true distance) and consistent (distances only get closer to the true value over time), although better heuristics may improve the efficiency of the program. Using the number of inversions within the puzzle also yields information about the solvability of the puzzle. One important takeaway from this project was that the use of lookup tables wherever possible can increase the speed greatly.
