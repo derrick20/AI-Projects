@@ -686,9 +686,8 @@ def main():
     else:
         board = set_initial_board(b)
 
-# play in the middle 4x4 in the very beginnning, wedging (being
-
-# TODO currently beats holloway and sapre but not ajian...
+# play in the middle 4x4 in the very beginning, wedging
+# currently beats holloway and sapre but not jian
 
     board = get_empty_board()
     set_directions(board)
@@ -696,9 +695,8 @@ def main():
 
     display_board(board)
     max_d = 4
-    gamemode = input("A = alphabeta, M = minimax, R = random, H = human. AI always goes first. Ex: 'AR' = alphabeta AI vs random: ")
+    gamemode = input("A = alphabeta, M = minimax, R = random, H = human. Ex: 'AR' = alphabeta AI vs random: ")
     print()
-    #board = set_initial_board('.oooooo@..ooooooooooo@oo.@@o@ooo@@@@oo@@.@@@@o@@..@@@@....@@@@@.')
     count = 0
     total = 1
     for i in range(total):
@@ -708,7 +706,7 @@ def main():
         board = get_empty_board()
         print("Time: " + str(next_time - cur_time))
         count += result
-    print(count/total)
+    # print(count/total)
 
 class Strategy():
     def best_strategy(self, board, player, best_move, still_running):

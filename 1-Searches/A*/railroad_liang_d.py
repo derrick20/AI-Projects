@@ -196,7 +196,6 @@ def BFS_path(start, goal, explored, graph):  # this time, start and goal are the
     print('Cost: ' + str(cost(node_path, graph)))
     print('node path: ' + str(list(node_path)))
     print('number of explored: ' + str(len(explored)))
-    print(len(node_path))
     return list(city_path)  # (l, graph) # a bit less efficient since two loops rather than at same time, but only run once so not significant
 
 
@@ -238,7 +237,6 @@ def A_star_path(node_path, g, graph):
     print('Cost: ' + str(cost(node_path, graph)))#str(g[node_path[-1]]))
     print('node path: ' + str(node_path))
     print('number of explored: ' + str(len(g)))
-    print(len(node_path))
     count = 0
     for i in range(1, len(node_path)):
         if count % 100 == 0:
@@ -342,7 +340,6 @@ def bidirectional_BFS(start_id, goal_id, graph):
             print('node path: ' + str(node_path))
             print('number of explored forward: ' + str(len(explored_f)))
             print('number of explored backward: ' + str(len(explored_b)))
-            print(len(node_path))
             return city_path
 
         for adj in graph['adj_list'][current_f]: # Apply BFS for the forward direction
@@ -367,7 +364,6 @@ def bidirectional_BFS(start_id, goal_id, graph):
             print('node path: ' + str(node_path))
             print('number of explored forward: ' + str(len(explored_f)))
             print('number of explored backward: ' + str(len(explored_b)))
-            print(len(node_path))
             return city_path
 
         for adj in graph['adj_list'][current_b]:# Apply BFS for the backward direction
@@ -511,8 +507,8 @@ def main():
     '''depends on your data setup, you can change this part'''
     graph = make_graph("rrNodes.txt", "rrNodeCity.txt", "rrEdges.txt")
 
-    start = graph['cityToNode']['Los Angeles']#input("Start city: ")] Los Angeles
-    goal = graph['cityToNode']['Chicago']#input("Goal city: ")] Chicago
+    start = graph['cityToNode'][input("Start city (Ex. Los Angeles): ")] # Los Angeles
+    goal = graph['cityToNode'][input("Goal city (Ex. Chicago): ")] # Chicago
     ##print(graph['nodes'][goal])
     # print(graph['edges'][('1701265', '1701291')])
     #print(calc_edge_cost(start, goal, graph))
@@ -555,7 +551,7 @@ def main():
     reset_graph(graph)
 
     # TODO: check your tridirectional search algorithm here
-    goals = []
+    '''goals = []
     goals.append(graph['cityToNode'][input('Goal1: ')])
     goals.append(graph['cityToNode'][input('Goal2: ')])
     goals.append(graph['cityToNode'][input('Goal3: ')])
@@ -565,7 +561,10 @@ def main():
     next_time = time.time()
     # print("Bi-directional A* path: ", bi_a_path)
     print("Tri-directional A* Duration: ", (next_time - cur_time))#'''
+
+    print("\nClose display window to exit program")
     root.mainloop()
+
 if __name__ == '__main__':
     main()
 '''

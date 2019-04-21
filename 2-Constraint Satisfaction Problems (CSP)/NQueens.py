@@ -67,7 +67,7 @@ def is_attacking(queen, tmp_queen):
 
 def main():
     global board, variables, N, domain
-    N = 7#int(input("N: "))
+    N = 200#int(input("N: "))
     domain = [i for i in range(N)]
     variables = [i for i in range(N)] # coincidentally same as domain
     initial_assignment(N)
